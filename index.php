@@ -19,8 +19,12 @@
             <div id="barResult"></div>
         </div>
         <div id="content">
-
+            <h1 id="title-heading">Character information</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque deserunt, distinctio dolor explicabo illum libero magni, maxime mollitia, necessitatibus nesciunt odio officia quaerat rerum sunt ut veniam. Consequatur, eum!</p>
         </div>
+        <footer>
+            <p>Created by: <a href="https://github.com/svetoslav-vladov" target="_blank">Svetoslav Vladov</a></p>
+        </footer>
     </div>
     <script src="./assets/js/main.js"></script>
 </body>

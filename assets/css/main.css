@@ -4,7 +4,27 @@ body{
     background-size: cover;
     background-color: #201414;
     background-attachment:  fixed;
+    color: #fff;
+    font-size: 1.1em;
+    font-family:monospace;
 }
+footer a{
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #ee3337;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-decoration: underline;
+}
+
+footer{
+    text-align: center;
+}
+
 #logo{
     text-align: center;
 }
@@ -18,6 +38,7 @@ body{
 }
 #logo img{
     height: 200px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 #wrap{
@@ -38,16 +59,49 @@ body{
 }
 #search input{
     width: 80%;
-
+    padding: 8px;
+    border: 1px solid #ee3437a3;
+    box-sizing:  border-box;
+    color: #ffffff;
+    background: #2e2927a6;
+    transition: outline-offset 0.3s ease-in-out;
 }
 #search button{
     width: 15%;
-
+    background: #ee3337c7;
+    border: 1px solid #00000099;
+    padding: 7px 0;
+    box-sizing: border-box;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
 }
 #content{
     min-height: 300px;
     margin: 10px 0 0 0;
     background: #00000070;
     border-radius: 5px;
-    border: 1px solid #00000026;
+    border: 1px solid #ee3437a3;
+    box-sizing: border-box;
+    padding:10px;
+}
+#logo img:hover {
+    opacity: 0.7;
+}
+
+#search input:focus {
+    outline-color: #ee3437ba;
+    outline-style: inset;
+    outline-offset: -6px;
+}
+#search button:hover {
+    background: red;
+}
+#search button:focus {
+    outline:  none;
+}
+#barResult {
+    background: #8c3432ad;
+    max-height: 170px;
+    width:  320px;
+    transition: height 0.4s ease-in-out;
 }
