@@ -17,6 +17,7 @@
             <input type="text" name="charName" id="charName" placeholder="Type dota 2 hero name...">
             <button id="deepSearch">Search</button>
             <div id="barResult"></div>
+            <div id="loading"></div>
         </div>
         <div id="content">
             <h1 id="title-heading">Character information</h1>

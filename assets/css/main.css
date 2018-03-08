@@ -56,6 +56,7 @@ footer{
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    position: relative;
 }
 #search input{
     width: 80%;
@@ -104,4 +105,19 @@ footer{
     max-height: 170px;
     width:  320px;
     transition: height 0.4s ease-in-out;
+}
+#barResult ul {
+    padding: 10px;
+    margin:  0;
+    padding-left: 30px;
+}
+
+#loading{
+    position: absolute;
+    left: -35px;
+    top: 0;
+}
+#loading img{
+    height: 30px;
+    width:auto;
 }
