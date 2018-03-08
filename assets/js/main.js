@@ -70,7 +70,7 @@ document.getElementById("charName").addEventListener("input", function(){
                         content.innerHTML += "<div class='hero-armor'><span>Armor: </span>" + charInfo["base_armor"] + "</div>";
                         content.innerHTML += "<div class='hero-main-attr'><span>Primary attr: </span>" + charInfo["primary_attr"] + "</div>";
 
-
+                        content.style.display = "block";
 
                 };
 
