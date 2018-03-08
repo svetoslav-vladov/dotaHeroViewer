@@ -42,16 +42,22 @@ document.getElementById("charName").addEventListener("input", function(){
 
             if(e.target && e.target.nodeName == "LI") {
 
-                console.log(e.target.id + " was clicked");
+
+                var content = document.getElementById("content");
+                content.style.display = "block";
+                content.innerHTML = "";
 
                 var xh = new XMLHttpRequest();
                 xh.open("GET", "logic.php?id=" + e.target.id);
 
+                var loading = document.createElement("img");
+                loading.src = "./assets/img/loading.gif";
+                content.appendChild(loading);
+
                 xh.onload = function () {
-                    document.getElementById("content").innerHTML = "";
+                    content.innerHTML = "";
 
                     var charInfo = JSON.parse(this.responseText);
-                    var content = document.getElementById("content");
                     var divv = document.createElement("div");
 
 
@@ -70,7 +76,7 @@ document.getElementById("charName").addEventListener("input", function(){
                         content.innerHTML += "<div class='hero-armor'><span>Armor: </span>" + charInfo["base_armor"] + "</div>";
                         content.innerHTML += "<div class='hero-main-attr'><span>Primary attr: </span>" + charInfo["primary_attr"] + "</div>";
 
-                        content.style.display = "block";
+
 
                 };
 
