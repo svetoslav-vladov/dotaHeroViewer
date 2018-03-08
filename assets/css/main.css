@@ -107,7 +107,7 @@ footer{
     transition: height 0.4s ease-in-out;
 }
 #barResult ul {
-    padding: 10px;
+    padding: 0 10px 10px;
     margin:  0;
     padding-left: 30px;
 }
@@ -120,4 +120,14 @@ footer{
 #loading img{
     height: 30px;
     width:auto;
+}
+#list li img {top: 7px;left: 10px;position:  relative;height: 22px;}
+
+#list li {
+    cursor:  pointer;
+}
+
+#list li:hover {
+    color: red;
+    text-decoration:  underline;
 }
