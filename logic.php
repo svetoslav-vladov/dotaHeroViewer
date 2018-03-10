@@ -10,17 +10,28 @@ if(isset($_GET["search"])){
 
     foreach ($heroDB as $hero){
 
-        if(strstr(strtolower($hero["localized_name"]), strtolower($search))){
-            $result[] = ["name"=>$hero["localized_name"],"id"=>$hero["id"],"icon"=>$apiHost.$hero["icon"]];
-            $found = true;
-            $idx++;
+        for($i = 0; $i < 1; $i++){
+            if(strtolower(substr($search,0, strlen($search))) === strtolower(substr($hero["localized_name"],0, strlen($search)))){
+
+                $result[] = ["name"=>$hero["localized_name"],"id"=>$hero["id"],"icon"=>$apiHost.$hero["icon"]];
+                $found = true;
+                $idx++;
+
+            }
         }
+
+//        if(strstr(strtolower($hero["localized_name"]), strtolower($search))){
+//            $result[] = ["name"=>$hero["localized_name"],"id"=>$hero["id"],"icon"=>$apiHost.$hero["icon"]];
+//            $found = true;
+//            $idx++;
+//        }
         if($idx == 6){
             break;
         }
     }
     if(!$found){
-        echo "Hero not found";
+        $result[] = ["error"=>"Hero not found"];
+        echo json_encode($result);
     }
     else{
         echo json_encode($result);
@@ -55,4 +66,10 @@ if(isset($_GET["id"])){
 
     }
     echo json_encode($character);
+}
+
+
+if(isset($_GET["deepsearch"])){
+    $deepSearch = htmlentities($_GET["deepsearch"]);
+    echo "Heroes not found";
 }

@@ -44,7 +44,7 @@ footer{
 #wrap{
     width: 100%;
     max-width: 900px;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
     margin: 5% auto;
     background: #5b5250d4;
@@ -59,7 +59,7 @@ footer{
     position: relative;
 }
 #search input{
-    width: 80%;
+    width: 70%;
     padding: 8px;
     border: 1px solid #ee3437a3;
     box-sizing:  border-box;
@@ -68,7 +68,7 @@ footer{
     transition: outline-offset 0.3s ease-in-out;
 }
 #search button{
-    width: 15%;
+    width: 25%;
     background: #ee3337c7;
     border: 1px solid #00000099;
     padding: 7px 0;
@@ -105,7 +105,7 @@ footer{
 #barResult {
     background: #8c3432ad;
     max-height: 170px;
-    width:  320px;
+    width: 280px;
     transition: height 0.4s ease-in-out;
 }
 #barResult ul {

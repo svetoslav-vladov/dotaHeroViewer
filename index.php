@@ -15,7 +15,7 @@
         </div>
         <div id="search">
             <input type="text" name="charName" id="charName" placeholder="Type dota 2 hero name...">
-            <button id="deepSearch">Search</button>
+            <button id="deepSearch">Deep Search</button>
             <div id="barResult"></div>
             <div id="loading"></div>
         </div>
