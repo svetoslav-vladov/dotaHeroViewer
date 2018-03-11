@@ -122,9 +122,9 @@ footer {
 }
 
 #barResult ul {
-    padding: 0 10px 7px;
+    padding: 0px 10px 10px;
     margin: 0;
-    padding-left: 30px;
+    padding-left: 15px;
 }
 
 #loading {
@@ -139,14 +139,15 @@ footer {
 }
 
 #list li img {
-    top: 7px;
-    left: 10px;
+    top: 5px;
     position: relative;
-    height: 22px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 #list li {
     cursor: pointer;
+    list-style:  none;
 }
 
 #list li:hover {

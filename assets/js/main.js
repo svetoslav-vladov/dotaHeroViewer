@@ -40,8 +40,8 @@ document.getElementById("charName").addEventListener("input", function () {
                 var img = document.createElement("img");
                 img.src = heroes[i]["icon"];
 
-                li.innerHTML = heroes[i]["name"];
-                li.appendChild(img);
+                li.innerHTML = "<img src='"+ heroes[i]["icon"] +"' alt=''></img>" + heroes[i]["name"];
+
                 ul.appendChild(li);
             }
             div.appendChild(ul);
