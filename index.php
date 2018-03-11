@@ -24,7 +24,7 @@
 
             </div>
             <footer>
-                <p>Created by: <a href="https://github.com/svetoslav-vladov" target="_blank">Svetoslav Vladov</a></p>
+                <p>Created by: <a href="https://github.com/svetoslav-vladov" target="_blank">Svetoslav Vladov</a> - DHV v1.0 / 11.03.2018</p>
             </footer>
         </div>
         <script src="./assets/js/main.js"></script>
