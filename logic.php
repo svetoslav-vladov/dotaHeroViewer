@@ -2,11 +2,13 @@
     $heroDB = file_get_contents("https://api.opendota.com/api/heroStats");
     $heroDB = json_decode($heroDB, true);
     $apiHost = "https://api.opendota.com";
-if(isset($_GET["search"])){
-    $search = htmlentities($_GET["search"]);
-    $result = array();
     $idx = 0;
     $found = false;
+    $result = array();
+
+if(isset($_GET["search"])){
+    $search = htmlentities($_GET["search"]);
+
 
     foreach ($heroDB as $hero){
 
@@ -71,5 +73,41 @@ if(isset($_GET["id"])){
 
 if(isset($_GET["deepsearch"])){
     $deepSearch = htmlentities($_GET["deepsearch"]);
-    echo "Heroes not found";
+    foreach ($heroDB as $hero){
+
+        for($i = 0; $i < 1; $i++){
+            if(strtolower(substr($deepSearch,0, strlen($deepSearch))) === strtolower(substr($hero["localized_name"],0, strlen($deepSearch)))){
+
+                $result[$hero["localized_name"]] = [
+                    "ID" => $hero["id"],
+                    "Name" => $hero["localized_name"],
+                    "Attribute" => $hero["primary_attr"],
+                    "Attack" => $hero["attack_type"],
+                    "img" => $apiHost . $hero["img"],
+                    "icon" => $apiHost . $hero["icon"],
+                    "Health" => $hero["base_health"],
+                    "Mana" => $hero["base_mana"],
+                    "Health regen" => $hero["base_health_regen"],
+                    "Mana regen" => $hero["base_mana_regen"],
+                    "Range" => $hero["attack_range"],
+                    "Proj speed" => $hero["projectile_speed"],
+                    "Attack speed" => $hero["attack_rate"],
+                    "Move speed" => $hero["move_speed"],
+                    "Turn rate" => $hero["turn_rate"],
+                    "Armor" => $hero["base_armor"]
+                ];
+                $found = true;
+
+
+            }
+        }
+
+    }
+    if(!$found){
+        $result[] = ["error"=>"Heroes not found"];
+        echo json_encode($result);
+    }
+    else{
+        echo json_encode($result);
+    }
 }

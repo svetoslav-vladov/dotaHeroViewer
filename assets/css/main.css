@@ -137,3 +137,31 @@ footer{
     font-weight:  bold;
     color: #ca2013;
 }
+
+.hero-item {
+    width: 250px;
+    background: #80000069;
+    box-sizing:  border-box;
+    padding:  10px;
+    margin: 12px;
+    border: 1px solid #a93032;
+    float:  left;
+    color: navajowhite;
+    font-size: 0.85em;
+    font-weight:  bold;
+}
+
+.clear{
+    clear:both;
+}
+
+.hero-item table tr:nth-Child(even) {
+    background: #a9303247;
+}
+
+.hero-item table tr:nth-Child(odd) {
+    background: #8a2b2bdb;
+}
+
+.hero-item tr td {
+}

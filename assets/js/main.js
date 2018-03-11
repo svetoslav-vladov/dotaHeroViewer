@@ -64,6 +64,7 @@ document.getElementById("charName").addEventListener("input", function(){
 
 
                     var content = document.getElementById("content");
+                    document.getElementById("barResult").innerHTML = "";
                     content.style.display = "block";
                     content.innerHTML = "";
 
@@ -116,8 +117,11 @@ var deepSearch = document.getElementById("deepSearch");
 deepSearch.onclick = function(ev){
     var searchField = document.getElementById("charName");
     var img = document.createElement("img");
+    var barRes = document.getElementById("barResult");
 
+    barRes.innerHTML = "";
     img.src = "./assets/img/loading.gif";
+    content.innerHTML = "";
     content.style.display = "block";
 
     searchXHR = new XMLHttpRequest();
@@ -125,11 +129,62 @@ deepSearch.onclick = function(ev){
 
     content.appendChild(img);
     searchXHR.onload = function () {
-        if(this.responseText === "Heroes not found"){
-            content.innerHTML = this.responseText;
+        var jsonResponse = JSON.parse(this.responseText);
+        
+        // check if the response is array, that way i know i got and heroes not found error
+        if(jsonResponse.constructor === Array){
+
+            content.innerHTML = jsonResponse[0]["error"];
+
         }
         else{
-            content.innerHTML = this.responseText;
+            content.innerHTML = "";
+
+            for(var item in jsonResponse){
+                var heroBox = document.createElement("div");
+                heroBox.setAttribute("class","hero-item");
+                var idxNum = 0;
+                var statTab = document.createElement("table");
+                statTab.width = "100%";
+                for(var key in jsonResponse[item]){
+                    var tabTr = document.createElement("tr");
+
+                    if(idxNum === 0){
+                        var heroImg = document.createElement("img");
+                        var topTr = document.createElement("tr");
+                        var topTd = document.createElement("td");
+                        heroImg.src = jsonResponse[item]["img"];
+                        heroImg.style.width = "100%";
+
+                        topTd.setAttribute("colspan", "2");
+                        topTd.appendChild(heroImg);
+                        topTr.appendChild(topTd);
+                        statTab.appendChild(topTr);
+
+                       // tabTr.innerHTML = "<td colspan='2'><img src='"+jsonResponse[item]["img"]+"' alt='hero image'></td>";
+                        
+                    }
+
+                    if(key === "icon" || key === "img"){
+
+                    }
+                    else{
+
+                        tabTr.innerHTML = "<td>"+key+"</td><td>"+jsonResponse[item][key]+"</td>";
+
+                        statTab.appendChild(tabTr);
+                    }
+                    idxNum++;
+
+                }
+                heroBox.appendChild(statTab);
+                content.appendChild(heroBox);
+                var clearDiv = document.createElement("div");
+                clearDiv.setAttribute("class", "clear");
+
+            }
+
+            content.appendChild(clearDiv);
 
         }
     };

@@ -21,6 +21,7 @@
         </div>
         <div id="content">
 
+
         </div>
         <footer>
             <p>Created by: <a href="https://github.com/svetoslav-vladov" target="_blank">Svetoslav Vladov</a></p>
